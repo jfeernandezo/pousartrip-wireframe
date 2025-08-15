@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ChevronLeft, ChevronRight, MapPin, Clock, Star, Users, Plane } from "lucide-react"
+import { MapPin, Clock, Star, Users, Plane, ChevronLeft, ChevronRight } from "lucide-react"
 
 interface PackageHighlight {
   id: string
@@ -138,6 +138,14 @@ function CountdownTimer({ endDate }: { endDate: string }) {
 export function PackageHighlightsCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [visibleCards, setVisibleCards] = useState(2)
+  const [filter, setFilter] = useState<"Todos" | "Nacional" | "Internacional">("Todos")
+
+  const filteredPackages = packages.filter(
+    (pkg) =>
+      filter === "Todos" ||
+      (filter === "Nacional" && pkg.type === "nacional") ||
+      (filter === "Internacional" && pkg.type === "internacional"),
+  )
 
   useEffect(() => {
     const handleResize = () => {
@@ -155,14 +163,14 @@ export function PackageHighlightsCarousel() {
 
   const nextSlide = () => {
     setCurrentIndex((prev) => {
-      const maxIndex = packages.length - visibleCards
+      const maxIndex = filteredPackages.length - visibleCards
       return prev >= maxIndex ? 0 : prev + 1
     })
   }
 
   const prevSlide = () => {
     setCurrentIndex((prev) => {
-      const maxIndex = packages.length - visibleCards
+      const maxIndex = filteredPackages.length - visibleCards
       return prev === 0 ? maxIndex : prev - 1
     })
   }
@@ -173,114 +181,156 @@ export function PackageHighlightsCarousel() {
         {/* Header */}
         <div className="text-center mb-12">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <div className="w-8 h-8 bg-yellow-400 rounded-lg flex items-center justify-center">
-              <Plane className="w-4 h-4 text-gray-800" />
-            </div>
-            <h2 className="text-3xl font-bold text-gray-800">
+            <Plane className="h-8 w-8 text-yellow-500" />
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
               Pacotes em <span className="text-yellow-500">Destaque</span>
             </h2>
           </div>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Ofertas imperdíveis com descontos especiais e benefícios exclusivos. Aproveite antes que o tempo acabe!
           </p>
         </div>
 
+        {/* Filter Buttons */}
+        <div className="flex justify-center gap-4 mb-12">
+          {["Todos", "Nacional", "Internacional"].map((category) => (
+            <Button
+              key={category}
+              variant={filter === category ? "default" : "outline"}
+              onClick={() => setFilter(category as typeof filter)}
+              className={`px-6 py-2 rounded-full transition-all duration-300 transform hover:-translate-y-2 ${
+                filter === category
+                  ? "bg-blue-900 hover:bg-blue-800 text-white"
+                  : "border-blue-900 text-blue-900 hover:bg-blue-50"
+              }`}
+            >
+              {category}
+            </Button>
+          ))}
+        </div>
+
         {/* Carousel */}
         <div className="relative">
-          <div className="overflow-hidden">
+          {/* Navigation Buttons */}
+          <Button
+            variant="outline"
+            size="icon"
+            onClick={prevSlide}
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg"
+            disabled={currentIndex === 0}
+          >
+            <ChevronLeft className="h-4 w-4" />
+          </Button>
+
+          <Button
+            variant="outline"
+            size="icon"
+            onClick={nextSlide}
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg"
+            disabled={currentIndex >= filteredPackages.length - visibleCards}
+          >
+            <ChevronRight className="h-4 w-4" />
+          </Button>
+
+          {/* Carousel Container */}
+          <div className="overflow-hidden mx-12">
             <div
-              className="flex transition-transform duration-500 ease-in-out gap-8"
+              className="flex transition-transform duration-300 ease-in-out gap-8"
               style={{
                 transform: `translateX(-${currentIndex * (100 / visibleCards)}%)`,
-                width: `${(packages.length * 100) / visibleCards}%`,
+                width: `${(filteredPackages.length * 100) / visibleCards}%`,
               }}
             >
-              {packages.map((pkg) => (
+              {filteredPackages.map((pkg) => (
                 <Card
                   key={pkg.id}
-                  className={`flex-shrink-0 hover:shadow-xl transition-all duration-300 border-0 overflow-hidden group ${
+                  className={`group overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 ${
                     pkg.featured ? "ring-2 ring-yellow-400" : ""
                   }`}
-                  style={{ width: `calc(${100 / visibleCards}% - ${(8 * (visibleCards - 1)) / visibleCards}px)` }}
+                  style={{ width: `calc(${100 / filteredPackages.length}% - 1rem)` }}
                 >
-                  <div className="relative overflow-hidden">
+                  <div className="relative">
                     <img
                       src={pkg.image || "/placeholder.svg"}
                       alt={pkg.title}
-                      className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                      className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
                     />
 
                     {/* Badges */}
-                    <div className="absolute top-3 left-3 flex flex-col gap-2">
-                      {pkg.featured && (
-                        <Badge className="bg-yellow-400 text-gray-800 hover:bg-yellow-500">⭐ Destaque</Badge>
-                      )}
+                    <div className="absolute top-4 left-4 flex flex-col gap-2">
+                      {pkg.featured && <Badge className="bg-yellow-500 text-black font-semibold">⭐ Destaque</Badge>}
                       <Badge
-                        variant={pkg.type === "internacional" ? "default" : "secondary"}
-                        className={pkg.type === "internacional" ? "bg-blue-600" : "bg-green-600"}
+                        variant="secondary"
+                        className={pkg.type === "internacional" ? "bg-blue-600 text-white" : "bg-green-600 text-white"}
                       >
                         {pkg.type === "internacional" ? "🌍 Internacional" : "🇧🇷 Nacional"}
                       </Badge>
                     </div>
 
                     {/* Discount */}
-                    <div className="absolute top-3 right-3">
-                      <div className="bg-red-500 text-white px-2 py-1 rounded-full text-sm font-bold">
+                    <div className="absolute top-4 right-4">
+                      <div className="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold">
                         -{pkg.discount}%
                       </div>
                     </div>
 
                     {/* Countdown */}
-                    <div className="absolute bottom-3 right-3">
+                    <div className="absolute bottom-4 right-4">
                       <CountdownTimer endDate={pkg.endDate} />
                     </div>
+
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
 
                   <CardContent className="p-6">
-                    <div className="space-y-4">
-                      {/* Title and Location */}
-                      <div>
-                        <h3 className="font-bold text-xl text-gray-800 line-clamp-1">{pkg.title}</h3>
-                        <div className="flex items-center gap-1 text-gray-600 text-sm mt-1">
-                          <MapPin className="w-4 h-4" />
-                          <span>{pkg.destination}</span>
-                        </div>
+                    <div className="flex items-start justify-between mb-3">
+                      <div className="flex-1 min-w-0">
+                        <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-1 leading-tight">{pkg.title}</h3>
+                        <p className="text-gray-600 text-sm flex items-center gap-1">
+                          <MapPin className="h-4 w-4 flex-shrink-0" />
+                          <span className="truncate">{pkg.destination}</span>
+                        </p>
                       </div>
+                      <div className="flex items-center gap-1 ml-2 flex-shrink-0">
+                        <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                        <span className="text-sm font-semibold">{pkg.rating}</span>
+                        <span className="text-xs text-gray-500">({pkg.reviews})</span>
+                      </div>
+                    </div>
 
-                      {/* Rating and Duration */}
-                      <div className="flex items-center justify-between text-sm">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="flex items-center gap-4 text-sm text-gray-600">
                         <div className="flex items-center gap-1">
-                          <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                          <span className="font-medium">{pkg.rating}</span>
-                          <span className="text-gray-500">({pkg.reviews})</span>
-                        </div>
-                        <div className="flex items-center gap-1 text-gray-600">
-                          <Users className="w-4 h-4" />
-                          <span>{pkg.duration}</span>
+                          <Users className="h-4 w-4" />
+                          {pkg.duration}
                         </div>
                       </div>
+                    </div>
 
-                      {/* Benefits */}
-                      <div className="flex flex-wrap gap-2">
-                        {pkg.benefits.slice(0, 3).map((benefit, index) => (
-                          <Badge key={index} variant="outline" className="text-xs">
-                            {benefit}
-                          </Badge>
-                        ))}
-                      </div>
+                    {/* Benefits */}
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {pkg.benefits.slice(0, 3).map((benefit, index) => (
+                        <Badge key={index} variant="outline" className="text-xs">
+                          {benefit}
+                        </Badge>
+                      ))}
+                    </div>
 
-                      {/* Pricing */}
-                      <div className="space-y-3">
+                    <div className="flex items-center justify-between">
+                      <div>
                         <div className="flex items-center gap-2">
+                          <span className="text-xl md:text-2xl font-bold text-blue-900">
+                            R$ {pkg.discountPrice.toLocaleString()}
+                          </span>
                           <span className="text-sm text-gray-500 line-through">
                             R$ {pkg.originalPrice.toLocaleString()}
                           </span>
-                          <span className="text-2xl font-bold text-blue-600">
-                            R$ {pkg.discountPrice.toLocaleString()}
-                          </span>
                         </div>
-                        <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3">Ver Detalhes</Button>
+                        <p className="text-xs text-gray-600">por pessoa</p>
                       </div>
+                      <Button className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-4 md:px-6 text-sm md:text-base">
+                        Ver Detalhes
+                      </Button>
                     </div>
                   </CardContent>
                 </Card>
@@ -288,39 +338,24 @@ export function PackageHighlightsCarousel() {
             </div>
           </div>
 
-          {/* Navigation Buttons */}
-          <Button
-            variant="outline"
-            size="icon"
-            className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white shadow-lg z-10"
-            onClick={prevSlide}
-            disabled={currentIndex === 0}
-          >
-            <ChevronLeft className="w-4 h-4" />
-          </Button>
-
-          <Button
-            variant="outline"
-            size="icon"
-            className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white shadow-lg z-10"
-            onClick={nextSlide}
-            disabled={currentIndex >= packages.length - visibleCards}
-          >
-            <ChevronRight className="w-4 h-4" />
-          </Button>
+          <div className="flex justify-center gap-2 mt-8">
+            {Array.from({ length: Math.ceil(filteredPackages.length / visibleCards) }).map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentIndex(index)}
+                className={`w-3 h-3 rounded-full transition-colors ${
+                  Math.floor(currentIndex / visibleCards) === index ? "bg-blue-900" : "bg-gray-300"
+                }`}
+              />
+            ))}
+          </div>
         </div>
 
-        {/* Dots Indicator */}
-        <div className="flex justify-center gap-2 mt-8">
-          {Array.from({ length: packages.length - visibleCards + 1 }).map((_, index) => (
-            <button
-              key={index}
-              className={`w-2 h-2 rounded-full transition-colors ${
-                currentIndex === index ? "bg-blue-600" : "bg-gray-300"
-              }`}
-              onClick={() => setCurrentIndex(index)}
-            />
-          ))}
+        {/* CTA Section */}
+        <div className="text-center mt-12">
+          <Button size="lg" className="bg-blue-900 hover:bg-blue-800 text-white px-8 py-3 text-lg">
+            Ver Todos os Pacotes
+          </Button>
         </div>
       </div>
     </section>
