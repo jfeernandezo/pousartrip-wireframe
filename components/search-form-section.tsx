@@ -1,0 +1,158 @@
+"use client"
+
+import { useState } from "react"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { Calendar, MapPin, Users, Plane, Hotel, Package } from "lucide-react"
+
+export function SearchFormSection() {
+  const [activeTab, setActiveTab] = useState("passagens")
+
+  const tabs = [
+    { id: "passagens", label: "Passagens", icon: Plane },
+    { id: "hoteis", label: "Hotéis", icon: Hotel },
+    { id: "pacotes", label: "Pacotes", icon: Package },
+  ]
+
+  return (
+    <section className="relative -mt-16 z-30 mb-8">
+      <div className="container mx-auto px-4">
+        <div className="bg-white rounded-2xl shadow-2xl p-6 max-w-6xl mx-auto border border-gray-100">
+          {/* Tab Navigation */}
+          <div className="flex border-b border-gray-200 mb-6">
+            {tabs.map((tab) => {
+              const IconComponent = tab.icon
+              return (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id)}
+                  className={`flex items-center gap-2 px-6 py-3 font-medium transition-colors duration-200 border-b-2 ${
+                    activeTab === tab.id
+                      ? "text-[#1e3a8a] border-[#1e3a8a]"
+                      : "text-gray-500 border-transparent hover:text-[#1e3a8a]"
+                  }`}
+                >
+                  <IconComponent className="w-5 h-5" />
+                  {tab.label}
+                </button>
+              )
+            })}
+          </div>
+
+          {/* Search Form */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+            {/* Origin */}
+            <div className="space-y-2">
+              <Label htmlFor="origin" className="text-sm font-medium text-gray-700">
+                Origem
+              </Label>
+              <div className="relative">
+                <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                <Input
+                  id="origin"
+                  placeholder="De onde você sai?"
+                  className="pl-10 h-12 border-gray-300 focus:border-[#1e3a8a] focus:ring-[#1e3a8a]"
+                />
+              </div>
+            </div>
+
+            {/* Destination */}
+            <div className="space-y-2">
+              <Label htmlFor="destination" className="text-sm font-medium text-gray-700">
+                Destino
+              </Label>
+              <div className="relative">
+                <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                <Input
+                  id="destination"
+                  placeholder="Para onde você vai?"
+                  className="pl-10 h-12 border-gray-300 focus:border-[#1e3a8a] focus:ring-[#1e3a8a]"
+                />
+              </div>
+            </div>
+
+            {/* Date */}
+            <div className="space-y-2">
+              <Label htmlFor="date" className="text-sm font-medium text-gray-700">
+                {activeTab === "passagens" ? "Ida" : "Check-in"}
+              </Label>
+              <div className="relative">
+                <Calendar className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                <Input
+                  id="date"
+                  type="date"
+                  className="pl-10 h-12 border-gray-300 focus:border-[#1e3a8a] focus:ring-[#1e3a8a]"
+                />
+              </div>
+            </div>
+
+            {/* Passengers/Guests */}
+            <div className="space-y-2">
+              <Label htmlFor="passengers" className="text-sm font-medium text-gray-700">
+                {activeTab === "hoteis" ? "Hóspedes" : "Passageiros"}
+              </Label>
+              <div className="relative">
+                <Users className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                <Select>
+                  <SelectTrigger className="pl-10 h-12 border-gray-300 focus:border-[#1e3a8a] focus:ring-[#1e3a8a]">
+                    <SelectValue placeholder="1 adulto" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="1">1 adulto</SelectItem>
+                    <SelectItem value="2">2 adultos</SelectItem>
+                    <SelectItem value="3">3 adultos</SelectItem>
+                    <SelectItem value="4">4 adultos</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+            </div>
+          </div>
+
+          {/* Additional options for flights */}
+          {activeTab === "passagens" && (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+              <div className="space-y-2">
+                <Label htmlFor="return" className="text-sm font-medium text-gray-700">
+                  Volta (opcional)
+                </Label>
+                <div className="relative">
+                  <Calendar className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                  <Input
+                    id="return"
+                    type="date"
+                    className="pl-10 h-12 border-gray-300 focus:border-[#1e3a8a] focus:ring-[#1e3a8a]"
+                  />
+                </div>
+              </div>
+              <div className="space-y-2">
+                <Label className="text-sm font-medium text-gray-700">Classe</Label>
+                <Select>
+                  <SelectTrigger className="h-12 border-gray-300 focus:border-[#1e3a8a] focus:ring-[#1e3a8a]">
+                    <SelectValue placeholder="Econômica" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="economy">Econômica</SelectItem>
+                    <SelectItem value="premium">Premium</SelectItem>
+                    <SelectItem value="business">Executiva</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+            </div>
+          )}
+
+          {/* Search Button */}
+          <div className="flex justify-center">
+            <Button
+              size="lg"
+              className="bg-[#fbbf24] hover:bg-[#f59e0b] text-[#1e3a8a] px-12 py-4 text-lg font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+            >
+              Buscar {activeTab === "passagens" ? "Passagens" : activeTab === "hoteis" ? "Hotéis" : "Pacotes"}
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
