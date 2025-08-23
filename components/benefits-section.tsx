@@ -28,7 +28,7 @@ export function BenefitsSection() {
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-[#1e3a8a] mb-4">Porque viajar com a PousarTrip?</h2>
+          <h2 className="text-4xl font-bold text-[#1e3a8a] mb-4">Por que viajar com a PousarTrip?</h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
             Descubra os diferenciais que fazem da PousarTrip a escolha ideal para suas viagens
           </p>
