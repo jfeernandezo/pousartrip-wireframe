@@ -18,7 +18,7 @@ export function Header() {
               </div>
             </Link>
 
-            <nav className="hidden lg:flex items-center gap-12">
+            <nav className="hidden lg:flex items-center gap-4">
               <Link href="/" className="text-[var(--pousar-text)] hover:text-[var(--pousar-primary)] transition-colors duration-200 font-medium whitespace-nowrap">
                 Início
               </Link>
@@ -39,7 +39,7 @@ export function Header() {
 
           {/* Grupo da Direita */}
           <div className="hidden lg:flex items-center gap-4">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 ml-12">
               <Button
                 variant="outline"
                 size="sm"
