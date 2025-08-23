@@ -19,7 +19,7 @@ export const HeroSection: FC = () => {
         <div className="flex flex-col items-center justify-center text-center min-h-[85vh] max-w-4xl mx-auto relative -translate-y-16">
           <div className="relative">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-white">
-              Por que <span className="text-[#256FFF]">Pousar</span>
+              Porque <span className="text-[#256FFF]">Pousar</span>
               <br />é melhor que decolar!
             </h1>
 
