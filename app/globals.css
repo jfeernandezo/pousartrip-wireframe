@@ -38,6 +38,10 @@
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
 
+  /* Feature Icons */
+  --feature-icon-bg: #00BFFF;  /* Azul neon para ícones */
+  --feature-icon-color: #FFFFFF;  /* Cor branca para os ícones */
+
   /* PousarTrip Official Brand Colors */
   --pousar-primary: #256FFF;    /* Azul Primário - Para elementos de interação e destaque */
   --pousar-text: #1E1E1E;      /* Cinza Escuro - Para textos e títulos */
@@ -132,4 +136,16 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Feature Icons Styles */
+.feature-icon-wrapper {
+  background-color: var(--feature-icon-bg);
+  color: var(--feature-icon-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-icon-wrapper:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 191, 255, 0.3);
 }

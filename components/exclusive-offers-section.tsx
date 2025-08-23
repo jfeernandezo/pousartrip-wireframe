@@ -26,8 +26,8 @@ export function ExclusiveOffersSection() {
             {/* Features */}
             <div className="space-y-4">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-[#1e3a8a] rounded-full flex items-center justify-center">
-                  <Clock className="w-5 h-5 text-white" />
+                <div className="feature-icon-wrapper w-[60px] h-[60px] bg-[#00BFFF] rounded-full flex items-center justify-center">
+                  <Clock className="w-6 h-6 text-white" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900">Ofertas por tempo limitado</h3>
@@ -36,8 +36,8 @@ export function ExclusiveOffersSection() {
               </div>
 
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-[#3b82f6] rounded-full flex items-center justify-center">
-                  <Plane className="w-5 h-5 text-white" />
+                <div className="feature-icon-wrapper w-[60px] h-[60px] bg-[#00BFFF] rounded-full flex items-center justify-center">
+                  <Plane className="w-6 h-6 text-white" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900">Destinos internacionais</h3>
@@ -46,8 +46,8 @@ export function ExclusiveOffersSection() {
               </div>
 
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-[#256FFF] rounded-full flex items-center justify-center">
-                  <Star className="w-5 h-5 text-white" />
+                <div className="feature-icon-wrapper w-[60px] h-[60px] bg-[#00BFFF] rounded-full flex items-center justify-center">
+                  <Star className="w-6 h-6 text-white" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900">Experiências premium</h3>
