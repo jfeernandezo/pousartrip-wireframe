@@ -3,16 +3,16 @@ import { Instagram, Facebook, Twitter, Youtube, Linkedin } from "lucide-react"
 
 export function Footer() {
   return (
-    <footer className="bg-[#1e3a8a] text-white">
+    <footer className="bg-[var(--pousar-primary)] text-[var(--pousar-background)]">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Column 1: Logo and Description */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center">
-              <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center mr-3">
-                <span className="text-[#1e3a8a] font-bold text-lg">P</span>
+              <div className="w-10 h-10 bg-[var(--pousar-background)] rounded-lg flex items-center justify-center mr-3">
+                <span className="text-[var(--pousar-primary)] font-bold text-lg">P</span>
               </div>
-              <span className="text-white font-bold text-xl">PousarTrip</span>
+              <span className="text-[var(--pousar-background)] font-bold text-xl">PousarTrip</span>
             </div>
 
             <p className="text-gray-300 text-sm leading-relaxed max-w-md">
@@ -136,7 +136,7 @@ export function Footer() {
             </div>
 
             <div className="text-center lg:text-right">
-              <p className="text-gray-300 text-sm">© 2024 PousarTrip. Todos os direitos reservados.</p>
+              <p className="text-gray-300 text-sm">© 2025 PousarTrip. Todos os direitos reservados.</p>
             </div>
           </div>
         </div>

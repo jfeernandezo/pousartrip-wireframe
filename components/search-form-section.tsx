@@ -30,8 +30,8 @@ export function SearchFormSection() {
                   onClick={() => setActiveTab(tab.id)}
                   className={`flex items-center gap-2 px-6 py-3 font-medium transition-colors duration-200 border-b-2 ${
                     activeTab === tab.id
-                      ? "text-[#1e3a8a] border-[#1e3a8a]"
-                      : "text-gray-500 border-transparent hover:text-[#1e3a8a]"
+                      ? "text-[var(--pousar-primary)] border-[var(--pousar-primary)]"
+                      : "text-[var(--pousar-text)] border-transparent hover:text-[var(--pousar-primary)]"
                   }`}
                 >
                   <IconComponent className="w-5 h-5" />
@@ -150,7 +150,7 @@ export function SearchFormSection() {
                 <div className="md:col-span-2">
                   <Button
                     size="lg"
-                    className="bg-[#fbbf24] hover:bg-[#f59e0b] text-[#1e3a8a] h-12 text-base font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg w-full"
+                    className="bg-[var(--pousar-primary)] hover:bg-[var(--pousar-primary-hover)] text-[var(--pousar-background)] h-12 text-base font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg w-full"
                   >
                     Buscar Passagens
                   </Button>

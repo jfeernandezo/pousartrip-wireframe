@@ -3,54 +3,78 @@ import Link from "next/link"
 
 export function Header() {
   return (
-    <header className="bg-white shadow-sm border-b border-gray-100">
+    <header className="bg-[var(--pousar-background)] shadow-sm border-b border-gray-100">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <div className="flex items-center">
-            <div className="w-10 h-10 bg-[#1e3a8a] rounded-lg flex items-center justify-center mr-3">
-              <span className="text-white font-bold text-lg">P</span>
+          <Link href="/" className="flex items-center">
+            <div className="w-10 h-10 bg-[var(--pousar-primary)] rounded-lg flex items-center justify-center mr-3">
+              <span className="text-[var(--pousar-background)] font-bold text-lg">P</span>
             </div>
-            <span className="text-[#1e3a8a] font-bold text-xl">PousarTrip</span>
-          </div>
+            <span className="text-[var(--pousar-text)] font-bold text-xl">PousarTrip</span>
+          </Link>
 
-          <nav className="hidden md:flex items-center space-x-8">
-            <Link href="/" className="text-gray-700 hover:text-[#1e3a8a] transition-colors duration-200 font-medium">
+          <nav className="hidden md:flex items-center space-x-6">
+            <Link href="/" className="text-[var(--pousar-text)] hover:text-[var(--pousar-primary)] transition-colors duration-200 font-medium">
               Início
             </Link>
             <Link
               href="/pacotes"
-              className="text-gray-700 hover:text-[#1e3a8a] transition-colors duration-200 font-medium"
+              className="text-[var(--pousar-text)] hover:text-[var(--pousar-primary)] transition-colors duration-200 font-medium"
             >
               Pacotes
             </Link>
             <Link
               href="/sobre"
-              className="text-gray-700 hover:text-[#1e3a8a] transition-colors duration-200 font-medium"
+              className="text-[var(--pousar-text)] hover:text-[var(--pousar-primary)] transition-colors duration-200 font-medium"
             >
               Sobre Nós
             </Link>
             <Link
-              href="/blog"
-              className="text-gray-700 hover:text-[#1e3a8a] transition-colors duration-200 font-medium"
-            >
-              Blog
-            </Link>
-            <Link
               href="/contato"
-              className="text-gray-700 hover:text-[#1e3a8a] transition-colors duration-200 font-medium"
+              className="text-[var(--pousar-text)] hover:text-[var(--pousar-primary)] transition-colors duration-200 font-medium"
             >
               Contato
             </Link>
+
+            <div className="flex items-center space-x-4">
+              <Button
+                variant="outline"
+                className="border-[var(--pousar-primary)] text-[var(--pousar-text)] hover:bg-[var(--pousar-primary)] hover:text-[var(--pousar-background)] transition-colors duration-200"
+                asChild
+              >
+                <Link href="/vender-milhas">Vender Milhas</Link>
+              </Button>
+              <Button
+                variant="outline"
+                className="border-[var(--pousar-primary)] text-[var(--pousar-text)] hover:bg-[var(--pousar-primary)] hover:text-[var(--pousar-background)] transition-colors duration-200"
+                asChild
+              >
+                <Link href="/hoteis">Hotéis</Link>
+              </Button>
+              <Button
+                variant="outline"
+                className="border-[var(--pousar-primary)] text-[var(--pousar-text)] hover:bg-[var(--pousar-primary)] hover:text-[var(--pousar-background)] transition-colors duration-200"
+                asChild
+              >
+                <Link href="/atendimento">Atendimento Personalizado</Link>
+              </Button>
+            </div>
           </nav>
 
-          <Button
-            className="bg-[#1e3a8a] hover:bg-[#1e40af] text-white px-6 py-2 rounded-lg transition-colors duration-200 font-medium"
-            asChild
-          >
-            <Link href="https://wa.me/5547984483870" target="_blank">
-              Entrar
-            </Link>
-          </Button>
+          <div className="flex items-center space-x-4">
+            <Button
+              className="bg-[var(--pousar-primary)] hover:bg-[var(--pousar-primary-hover)] text-[var(--pousar-background)] px-6 py-2 rounded-lg transition-colors duration-200 font-medium"
+              asChild
+            >
+              <Link href="/login">Entrar</Link>
+            </Button>
+            <Button
+              className="bg-[var(--pousar-background)] border-2 border-[var(--pousar-primary)] text-[var(--pousar-text)] hover:bg-[var(--pousar-primary)] hover:text-[var(--pousar-background)] px-6 py-2 rounded-lg transition-colors duration-200 font-medium"
+              asChild
+            >
+              <Link href="/cadastro">Cadastro</Link>
+            </Button>
+          </div>
         </div>
       </div>
     </header>

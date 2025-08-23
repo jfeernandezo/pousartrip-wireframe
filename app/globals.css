@@ -38,9 +38,14 @@
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
 
-  /* Added PousarTrip brand colors */
-  --pousartrip-dark-blue: #1e3a8a;
-  --pousartrip-light-blue: #3b82f6;
+  /* PousarTrip Official Brand Colors */
+  --pousar-primary: #256FFF;    /* Azul Primário - Para elementos de interação e destaque */
+  --pousar-text: #1E1E1E;      /* Cinza Escuro - Para textos e títulos */
+  --pousar-background: #FFFFFF; /* Branco - Cor de fundo principal */
+  
+  /* Variações do azul primário para efeitos */
+  --pousar-primary-hover: rgb(37, 111, 255, 0.9);  /* Versão com opacidade para hover */
+  --pousar-primary-light: rgb(37, 111, 255, 0.1);  /* Versão clara para backgrounds sutis */
 }
 
 .dark {
