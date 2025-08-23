@@ -18,7 +18,7 @@ export function Header() {
               </div>
             </Link>
 
-            <nav className="hidden lg:flex items-center gap-8">
+            <nav className="hidden lg:flex items-center gap-12">
               <Link href="/" className="text-[var(--pousar-text)] hover:text-[var(--pousar-primary)] transition-colors duration-200 font-medium whitespace-nowrap">
                 Início
               </Link>
@@ -39,9 +39,10 @@ export function Header() {
 
           {/* Grupo da Direita */}
           <div className="hidden lg:flex items-center gap-4">
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2">
               <Button
                 variant="outline"
+                size="sm"
                 className="border-[var(--pousar-primary)] text-[var(--pousar-text)] hover:bg-[var(--pousar-primary)] hover:text-[var(--pousar-background)] transition-colors duration-200"
                 asChild
               >
@@ -49,6 +50,7 @@ export function Header() {
               </Button>
               <Button
                 variant="outline"
+                size="sm"
                 className="border-[var(--pousar-primary)] text-[var(--pousar-text)] hover:bg-[var(--pousar-primary)] hover:text-[var(--pousar-background)] transition-colors duration-200"
                 asChild
               >
@@ -56,6 +58,7 @@ export function Header() {
               </Button>
               <Button
                 variant="outline"
+                size="sm"
                 className="border-[var(--pousar-primary)] text-[var(--pousar-text)] hover:bg-[var(--pousar-primary)] hover:text-[var(--pousar-background)] transition-colors duration-200"
                 asChild
               >
