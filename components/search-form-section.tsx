@@ -17,9 +17,9 @@ export function SearchFormSection() {
   ]
 
   return (
-    <section className="relative -mt-16 z-30 mb-8">
+    <section className="relative -mt-32 z-30 mb-8">
       <div className="container mx-auto px-4">
-        <div className="bg-white rounded-2xl shadow-2xl p-6 max-w-7xl mx-auto border border-gray-100">
+        <div className="bg-white rounded-3xl shadow-2xl p-6 max-w-7xl mx-auto border border-gray-100">
           {/* Tab Navigation */}
           <div className="flex border-b border-gray-200 mb-6">
             {tabs.map((tab) => {
@@ -235,7 +235,7 @@ export function SearchFormSection() {
             <div className="flex justify-center">
               <Button
                 size="lg"
-                className="bg-[#fbbf24] hover:bg-[#f59e0b] text-[#1e3a8a] px-12 py-4 text-lg font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+                className="bg-[var(--pousar-primary)] hover:bg-[var(--pousar-primary-hover)] text-[var(--pousar-background)] px-12 py-4 text-lg font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
               >
                 Buscar {activeTab === "hoteis" ? "Hotéis" : "Pacotes"}
               </Button>
