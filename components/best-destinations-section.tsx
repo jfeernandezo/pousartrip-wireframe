@@ -2,10 +2,7 @@
 
 import { useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
-im            <MapPin className="h-8 w-8 text-[#256FFF]" />
-            <h2 className="text-3xl md:text-4xl font-bold mb-2">
-              Melhores Destinos <span className="text-[#256FFF]">Selecionados</span>
-            </h2> { Badge } from "@/components/ui/badge"
+import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Star, MapPin, Calendar, Users } from "lucide-react"
 
