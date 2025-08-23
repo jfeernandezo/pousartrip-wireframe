@@ -9,8 +9,12 @@ export function Footer() {
           {/* Column 1: Logo and Description */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center">
-              <div className="w-10 h-10 bg-[var(--pousar-background)] rounded-lg flex items-center justify-center mr-3">
-                <span className="text-[var(--pousar-primary)] font-bold text-lg">P</span>
+              <div className="h-12 w-auto mr-3">
+                <img 
+                  src="/logo-white.png" 
+                  alt="PousarTrip Logo" 
+                  className="h-full w-auto object-contain"
+                />
               </div>
               <span className="text-[var(--pousar-background)] font-bold text-xl">PousarTrip</span>
             </div>

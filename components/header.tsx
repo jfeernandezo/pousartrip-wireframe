@@ -7,8 +7,12 @@ export function Header() {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center">
-            <div className="w-10 h-10 bg-[var(--pousar-primary)] rounded-lg flex items-center justify-center mr-3">
-              <span className="text-[var(--pousar-background)] font-bold text-lg">P</span>
+            <div className="h-12 w-auto mr-3">
+              <img 
+                src="/logo.png" 
+                alt="PousarTrip Logo" 
+                className="h-full w-auto object-contain"
+              />
             </div>
             <span className="text-[var(--pousar-text)] font-bold text-xl">PousarTrip</span>
           </Link>
