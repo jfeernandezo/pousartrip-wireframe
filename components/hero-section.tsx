@@ -18,18 +18,10 @@ export const HeroSection: FC = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col items-center justify-center text-center min-h-[85vh] max-w-4xl mx-auto relative -translate-y-16">
           <div className="relative">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight text-white">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-white">
               Por que <span className="text-[#256FFF]">Pousar</span>
               <br />é melhor que decolar!
             </h1>
-
-            <div className="bg-white/90 backdrop-blur-sm border-2 border-[#256FFF] px-8 py-4 rounded-lg mb-8 relative shadow-lg">
-              <p className="text-lg md:text-xl font-semibold text-[#1E1E1E]">
-                Aproveite as melhores oportunidades
-                <br />
-                para realizar sua viagem dos sonhos!
-              </p>
-            </div>
 
             <div className="absolute -top-4 -right-8 hidden lg:block">
               <svg className="w-12 h-12 text-[var(--pousar-primary)]" fill="currentColor" viewBox="0 0 24 24">

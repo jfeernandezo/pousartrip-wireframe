@@ -11,12 +11,12 @@ export function ExclusiveOffersSection() {
           {/* Left side - Content */}
           <div className="space-y-6">
             <div className="space-y-4">
-              <Badge className="bg-[#fbbf24] text-[#1e3a8a] hover:bg-[#f59e0b] px-3 py-1 text-sm font-medium">
+              <Badge className="bg-[#256FFF] text-white hover:bg-[#1E5ACC] px-3 py-1 text-sm font-medium">
                 Ofertas Limitadas
               </Badge>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
                 Ofertas exclusivas do mundo inteiro,
-                <span className="text-[#1e3a8a]"> aproveite.</span>
+                <span className="text-[#256FFF]"> aproveite.</span>
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed">
                 Fique por dentro e aproveite as oportunidades de viajar com desconto para os melhores destinos.
@@ -46,8 +46,8 @@ export function ExclusiveOffersSection() {
               </div>
 
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-[#fbbf24] rounded-full flex items-center justify-center">
-                  <Star className="w-5 h-5 text-[#1e3a8a]" />
+                <div className="w-10 h-10 bg-[#256FFF] rounded-full flex items-center justify-center">
+                  <Star className="w-5 h-5 text-white" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900">Experiências premium</h3>
@@ -87,7 +87,7 @@ export function ExclusiveOffersSection() {
               {/* Floating offer card */}
               <div className="absolute top-6 right-6 bg-white rounded-xl p-4 shadow-lg max-w-48">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-[#1e3a8a]">50% OFF</div>
+                  <div className="text-2xl font-bold text-[#256FFF]">50% OFF</div>
                   <div className="text-sm text-gray-600">Europa</div>
                   <div className="text-xs text-gray-500 mt-1">Válido até 31/12</div>
                 </div>
@@ -96,7 +96,7 @@ export function ExclusiveOffersSection() {
               {/* Floating destination card */}
               <div className="absolute bottom-6 left-6 bg-white rounded-xl p-4 shadow-lg">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-gradient-to-br from-[#1e3a8a] to-[#3b82f6] rounded-lg flex items-center justify-center">
+                  <div className="w-12 h-12 bg-gradient-to-br from-[#256FFF] to-[#1E5ACC] rounded-lg flex items-center justify-center">
                     <Plane className="w-6 h-6 text-white" />
                   </div>
                   <div>
@@ -108,8 +108,8 @@ export function ExclusiveOffersSection() {
             </div>
 
             {/* Decorative elements */}
-            <div className="absolute -top-4 -left-4 w-20 h-20 bg-[#fbbf24] rounded-full opacity-20"></div>
-            <div className="absolute -bottom-6 -right-6 w-16 h-16 bg-[#3b82f6] rounded-full opacity-30"></div>
+            <div className="absolute -top-4 -left-4 w-20 h-20 bg-[#256FFF] rounded-full opacity-20"></div>
+            <div className="absolute -bottom-6 -right-6 w-16 h-16 bg-[#256FFF] rounded-full opacity-30"></div>
           </div>
         </div>
       </div>

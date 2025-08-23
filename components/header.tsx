@@ -16,30 +16,24 @@ export function Header() {
             </div>
           </Link>
 
-          <nav className="hidden md:flex items-center space-x-6">
-            <Link href="/" className="text-[var(--pousar-text)] hover:text-[var(--pousar-primary)] transition-colors duration-200 font-medium">
+          <nav className="hidden lg:flex items-center gap-6">
+            <Link href="/" className="text-[var(--pousar-text)] hover:text-[var(--pousar-primary)] transition-colors duration-200 font-medium whitespace-nowrap">
               Início
             </Link>
             <Link
               href="/pacotes"
-              className="text-[var(--pousar-text)] hover:text-[var(--pousar-primary)] transition-colors duration-200 font-medium"
+              className="text-[var(--pousar-text)] hover:text-[var(--pousar-primary)] transition-colors duration-200 font-medium whitespace-nowrap"
             >
               Pacotes
             </Link>
             <Link
-              href="/sobre"
-              className="text-[var(--pousar-text)] hover:text-[var(--pousar-primary)] transition-colors duration-200 font-medium"
-            >
-              Sobre Nós
-            </Link>
-            <Link
               href="/contato"
-              className="text-[var(--pousar-text)] hover:text-[var(--pousar-primary)] transition-colors duration-200 font-medium"
+              className="text-[var(--pousar-text)] hover:text-[var(--pousar-primary)] transition-colors duration-200 font-medium whitespace-nowrap"
             >
               Contato
             </Link>
 
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center gap-6">
               <Button
                 variant="outline"
                 className="border-[var(--pousar-primary)] text-[var(--pousar-text)] hover:bg-[var(--pousar-primary)] hover:text-[var(--pousar-background)] transition-colors duration-200"
