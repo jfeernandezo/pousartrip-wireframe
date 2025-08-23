@@ -210,7 +210,7 @@ export function HotelsCarousel() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
-            Os Melhores <span className="text-yellow-500">Hotéis</span>
+            Os Melhores <span className="text-[#256FFF]">Hotéis</span>
           </h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
             Selecionamos os hotéis mais incríveis para tornar sua estadia inesquecível
@@ -258,13 +258,13 @@ export function HotelsCarousel() {
                         className="w-full h-48 object-cover"
                       />
                       <div className="absolute top-3 left-3">
-                        <span className="bg-yellow-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                        <span className="bg-[#256FFF] text-white px-3 py-1 rounded-full text-sm font-semibold">
                           {hotel.badge}
                         </span>
                       </div>
                       <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-full px-2 py-1">
                         <div className="flex items-center gap-1">
-                          <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                          <Star className="h-4 w-4 fill-[#256FFF] text-[#256FFF]" />
                           <span className="text-sm font-semibold text-slate-700">{hotel.rating}</span>
                         </div>
                       </div>

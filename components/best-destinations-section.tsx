@@ -2,7 +2,10 @@
 
 import { useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
+im            <MapPin className="h-8 w-8 text-[#256FFF]" />
+            <h2 className="text-3xl md:text-4xl font-bold mb-2">
+              Melhores Destinos <span className="text-[#256FFF]">Selecionados</span>
+            </h2> { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Star, MapPin, Calendar, Users } from "lucide-react"
 
@@ -104,9 +107,9 @@ export function BestDestinationsSection() {
         {/* Header */}
         <div className="text-center mb-12">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <MapPin className="h-8 w-8 text-yellow-500" />
+            <MapPin className="h-8 w-8 text-[#256FFF]" />
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-              Melhores Destinos <span className="text-yellow-500">Selecionados</span>
+              Melhores Destinos <span className="text-[#256FFF]">Selecionados</span>
             </h2>
           </div>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -147,7 +150,7 @@ export function BestDestinationsSection() {
                   className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute top-4 left-4">
-                  <Badge className="bg-yellow-500 text-black font-semibold">{destination.highlight}</Badge>
+                  <Badge className="bg-[#256FFF] text-white font-semibold">{destination.highlight}</Badge>
                 </div>
                 <div className="absolute top-4 right-4">
                   <Badge variant="secondary" className="bg-white/90 text-gray-800">
@@ -167,7 +170,7 @@ export function BestDestinationsSection() {
                     </p>
                   </div>
                   <div className="flex items-center gap-1">
-                    <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                    <Star className="h-4 w-4 fill-[#256FFF] text-[#256FFF]" />
                     <span className="text-sm font-semibold">{destination.rating}</span>
                     <span className="text-xs text-gray-500">({destination.reviews})</span>
                   </div>
@@ -195,7 +198,7 @@ export function BestDestinationsSection() {
                     </div>
                     <p className="text-xs text-gray-600">por pessoa</p>
                   </div>
-                  <Button className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-6">
+                  <Button className="bg-[#256FFF] hover:bg-[#1E5ACC] text-white font-semibold px-6">
                     Ver Detalhes
                   </Button>
                 </div>

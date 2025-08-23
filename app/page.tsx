@@ -4,7 +4,6 @@ import { SearchFormSection } from "@/components/search-form-section"
 import { ExclusiveOffersSection } from "@/components/exclusive-offers-section"
 import { BenefitsSection } from "@/components/benefits-section"
 import { AboutSection } from "@/components/about-section"
-import { BlogSection } from "@/components/blog-section"
 import { Footer } from "@/components/footer"
 import { TestimonialsSection } from "@/components/testimonials-section"
 import { FAQSection } from "@/components/faq-section"
@@ -28,7 +27,6 @@ export default function HomePage() {
         <AboutSection />
         <TestimonialsSection />
         <FAQSection />
-        <BlogSection />
       </main>
 
       <Footer />

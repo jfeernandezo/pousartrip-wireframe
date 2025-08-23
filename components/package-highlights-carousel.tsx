@@ -181,9 +181,9 @@ export function PackageHighlightsCarousel() {
         {/* Header */}
         <div className="text-center mb-12">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <Plane className="h-8 w-8 text-yellow-500" />
+            <Plane className="h-8 w-8 text-[#256FFF]" />
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-              Pacotes em <span className="text-yellow-500">Destaque</span>
+              Pacotes em <span className="text-[#256FFF]">Destaque</span>
             </h2>
           </div>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -245,7 +245,7 @@ export function PackageHighlightsCarousel() {
                 <Card
                   key={pkg.id}
                   className={`group overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 ${
-                    pkg.featured ? "ring-2 ring-yellow-400" : ""
+                    pkg.featured ? "ring-2 ring-[#256FFF]" : ""
                   }`}
                   style={{ width: `calc(${100 / filteredPackages.length}% - 1rem)` }}
                 >
@@ -258,7 +258,7 @@ export function PackageHighlightsCarousel() {
 
                     {/* Badges */}
                     <div className="absolute top-4 left-4 flex flex-col gap-2">
-                      {pkg.featured && <Badge className="bg-yellow-500 text-black font-semibold">⭐ Destaque</Badge>}
+                      {pkg.featured && <Badge className="bg-[#256FFF] text-white font-semibold">⭐ Destaque</Badge>}
                       <Badge
                         variant="secondary"
                         className={pkg.type === "internacional" ? "bg-blue-600 text-white" : "bg-green-600 text-white"}
@@ -292,7 +292,7 @@ export function PackageHighlightsCarousel() {
                         </p>
                       </div>
                       <div className="flex items-center gap-1 ml-2 flex-shrink-0">
-                        <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                        <Star className="h-4 w-4 fill-[#256FFF] text-[#256FFF]" />
                         <span className="text-sm font-semibold">{pkg.rating}</span>
                         <span className="text-xs text-gray-500">({pkg.reviews})</span>
                       </div>
@@ -328,7 +328,7 @@ export function PackageHighlightsCarousel() {
                         </div>
                         <p className="text-xs text-gray-600">por pessoa</p>
                       </div>
-                      <Button className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-4 md:px-6 text-sm md:text-base">
+                      <Button className="bg-[#256FFF] hover:bg-[#1E5ACC] text-white font-semibold px-4 md:px-6 text-sm md:text-base">
                         Ver Detalhes
                       </Button>
                     </div>

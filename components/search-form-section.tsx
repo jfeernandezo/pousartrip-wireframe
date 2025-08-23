@@ -109,7 +109,7 @@ export function SearchFormSection() {
               </div>
 
               {/* Second row: Passageiros, Class, and Search Button with equal dimensions */}
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-3 items-end">
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-3">
                 {/* Passageiros */}
                 <div className="space-y-2">
                   <Label htmlFor="passengers" className="text-sm font-medium text-gray-700">
@@ -147,7 +147,10 @@ export function SearchFormSection() {
                 </div>
 
                 {/* Search Button */}
-                <div className="md:col-span-2">
+                <div className="md:col-span-2 space-y-2">
+                  <Label className="text-sm font-medium text-transparent">
+                    Buscar
+                  </Label>
                   <Button
                     size="lg"
                     className="bg-[var(--pousar-primary)] hover:bg-[var(--pousar-primary-hover)] text-[var(--pousar-background)] h-12 text-base font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg w-full"
