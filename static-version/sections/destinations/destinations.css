@@ -1,0 +1,208 @@
+.destinations-section {
+    padding: 5rem 0;
+    background-color: white;
+}
+
+/* Cabeçalho da Seção */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 3rem;
+}
+
+.header-content {
+    max-width: 32rem;
+}
+
+.section-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 1rem;
+}
+
+.section-description {
+    font-size: 1.125rem;
+    color: #6b7280;
+    line-height: 1.625;
+}
+
+/* Controles do Carrossel */
+.carousel-controls {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.control-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 9999px;
+    background-color: white;
+    color: #4b5563;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.control-button:hover {
+    background-color: var(--pousar-primary);
+    border-color: var(--pousar-primary);
+    color: white;
+}
+
+.control-button svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+/* Carrossel de Destinos */
+.destinations-carousel {
+    position: relative;
+    overflow: hidden;
+    margin: 0 -1rem;
+    padding: 0 1rem;
+}
+
+.carousel-container {
+    display: flex;
+    gap: 2rem;
+    transition: transform 0.5s ease;
+}
+
+/* Cards de Destino */
+.destination-card {
+    flex: 0 0 calc(33.333% - 1.33rem);
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.destination-card:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Imagem do Card */
+.card-image {
+    position: relative;
+    height: 15rem;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.destination-card:hover .card-image img {
+    transform: scale(1.05);
+}
+
+.image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
+}
+
+.destination-badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--pousar-primary);
+    color: white;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+/* Conteúdo do Card */
+.card-content {
+    padding: 1.5rem;
+    background-color: white;
+}
+
+.destination-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 1rem;
+}
+
+.destination-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #6b7280;
+    font-size: 0.875rem;
+}
+
+.meta-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .destination-card {
+        flex: 0 0 calc(50% - 1rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .destination-card {
+        flex: 0 0 100%;
+    }
+
+    .section-header {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .carousel-controls {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Footer da Seção */
+.section-footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+.btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 2px solid var(--pousar-primary);
+    color: var(--pousar-primary);
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.btn-outline:hover {
+    background-color: var(--pousar-primary);
+    color: white;
+}
+
+.btn-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+}

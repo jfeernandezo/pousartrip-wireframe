@@ -1,0 +1,230 @@
+.offers-section {
+    padding: 4rem 0;
+    background-color: #f8fafc;
+}
+
+.offers-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+}
+
+@media (min-width: 1024px) {
+    .offers-grid {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+}
+
+/* Conteúdo à Esquerda */
+.offers-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.offers-header {
+    margin-bottom: 1.5rem;
+}
+
+.badge {
+    display: inline-block;
+    background-color: var(--pousar-primary);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.offers-title {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: #1f2937;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+    .offers-title {
+        font-size: 2.25rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .offers-title {
+        font-size: 3rem;
+    }
+}
+
+.text-primary {
+    color: var(--pousar-primary);
+}
+
+.offers-description {
+    color: #4b5563;
+    font-size: 1.125rem;
+    line-height: 1.625;
+}
+
+/* Lista de Features */
+.features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.feature-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: var(--pousar-primary);
+    border-radius: 50%;
+    color: white;
+}
+
+.feature-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.feature-content {
+    flex: 1;
+}
+
+.feature-title {
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 0.25rem;
+}
+
+.feature-description {
+    color: #6b7280;
+    font-size: 0.875rem;
+}
+
+/* Botões */
+.offers-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+/* Imagem à Direita */
+.offers-image {
+    position: relative;
+}
+
+.image-container {
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.main-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Cards Flutuantes */
+.floating-card {
+    position: absolute;
+    background-color: white;
+    border-radius: 0.75rem;
+    padding: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.offer-card {
+    top: 1.5rem;
+    right: 1.5rem;
+    text-align: center;
+    max-width: 12rem;
+}
+
+.offer-discount {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--pousar-primary);
+}
+
+.offer-destination {
+    color: #4b5563;
+    font-size: 0.875rem;
+}
+
+.offer-validity {
+    color: #6b7280;
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+}
+
+.destination-card {
+    bottom: 1.5rem;
+    left: 1.5rem;
+}
+
+.destination-content {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.destination-icon {
+    width: 3rem;
+    height: 3rem;
+    background: linear-gradient(135deg, var(--pousar-primary), #1e40af);
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.destination-info {
+    flex: 1;
+}
+
+.destination-name {
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.destination-price {
+    color: #4b5563;
+    font-size: 0.875rem;
+}
+
+/* Elementos Decorativos */
+.decorative-circle {
+    position: absolute;
+    border-radius: 50%;
+    background-color: var(--pousar-primary);
+    opacity: 0.2;
+}
+
+.circle-1 {
+    width: 5rem;
+    height: 5rem;
+    top: -1rem;
+    left: -1rem;
+}
+
+.circle-2 {
+    width: 4rem;
+    height: 4rem;
+    bottom: -1.5rem;
+    right: -1.5rem;
+}

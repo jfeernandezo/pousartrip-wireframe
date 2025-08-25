@@ -1,0 +1,118 @@
+<section class="destinations-section">
+    <div class="container">
+        <!-- Cabeçalho da Seção -->
+        <div class="section-header">
+            <div class="header-content">
+                <h2 class="section-title">Destinos mais procurados</h2>
+                <p class="section-description">
+                    Conheça os destinos preferidos dos nossos viajantes e prepare sua próxima aventura
+                </p>
+            </div>
+            <div class="carousel-controls">
+                <button class="control-button prev" id="prevDestination" aria-label="Destino anterior">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
+                <button class="control-button next" id="nextDestination" aria-label="Próximo destino">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Carrossel de Destinos -->
+        <div class="destinations-carousel" id="destinationsCarousel">
+            <div class="carousel-container">
+                <!-- Destino 1 -->
+                <div class="destination-card">
+                    <div class="card-image">
+                        <img src="assets/img/destinations/paris.jpg" alt="Paris">
+                        <div class="image-overlay"></div>
+                        <div class="destination-badge">Mais Popular</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="destination-title">Paris</h3>
+                        <div class="destination-meta">
+                            <div class="meta-item">
+                                <svg class="meta-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span>7 dias</span>
+                            </div>
+                            <div class="meta-item">
+                                <svg class="meta-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2z" />
+                                </svg>
+                                <span>A partir de R$ 4.999</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Destino 2 -->
+                <div class="destination-card">
+                    <div class="card-image">
+                        <img src="assets/img/destinations/dubai.jpg" alt="Dubai">
+                        <div class="image-overlay"></div>
+                        <div class="destination-badge">Luxo</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="destination-title">Dubai</h3>
+                        <div class="destination-meta">
+                            <div class="meta-item">
+                                <svg class="meta-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span>8 dias</span>
+                            </div>
+                            <div class="meta-item">
+                                <svg class="meta-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2z" />
+                                </svg>
+                                <span>A partir de R$ 7.499</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Destino 3 -->
+                <div class="destination-card">
+                    <div class="card-image">
+                        <img src="assets/img/destinations/maldivas.jpg" alt="Maldivas">
+                        <div class="image-overlay"></div>
+                        <div class="destination-badge">Praia</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="destination-title">Maldivas</h3>
+                        <div class="destination-meta">
+                            <div class="meta-item">
+                                <svg class="meta-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span>10 dias</span>
+                            </div>
+                            <div class="meta-item">
+                                <svg class="meta-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2z" />
+                                </svg>
+                                <span>A partir de R$ 8.999</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Link "Ver Todos" -->
+        <div class="section-footer">
+            <a href="/destinos" class="btn btn-outline">
+                Ver Todos os Destinos
+                <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>

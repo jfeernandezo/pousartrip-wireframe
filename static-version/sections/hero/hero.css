@@ -1,0 +1,138 @@
+.hero-section {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background e Overlay */
+.hero-background {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Conteúdo */
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 85vh;
+    max-width: 56rem;
+    margin: 0 auto;
+    position: relative;
+    transform: translateY(-4rem);
+}
+
+.hero-title-wrapper {
+    position: relative;
+}
+
+.hero-title {
+    font-size: 2.25rem;
+    line-height: 1.2;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero-title {
+        font-size: 3.75rem;
+    }
+}
+
+.text-primary {
+    color: var(--pousar-primary);
+}
+
+/* Decoração */
+.hero-decoration {
+    position: absolute;
+    top: -1rem;
+    right: -2rem;
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    .hero-decoration {
+        display: block;
+    }
+}
+
+.plane-icon {
+    width: 3rem;
+    height: 3rem;
+    color: var(--pousar-primary);
+}
+
+.dotted-line {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    width: 4rem;
+    height: 2rem;
+    border: 2px dashed var(--pousar-primary);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    opacity: 0.5;
+    border-radius: 0 0 9999px 9999px;
+}
+
+/* Botão WhatsApp */
+.whatsapp-button {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 50;
+}
+
+.btn-whatsapp {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    border-radius: 9999px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease;
+}
+
+.btn-whatsapp:hover {
+    transform: scale(1.05);
+}
+
+.whatsapp-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.whatsapp-text {
+    display: none;
+}
+
+@media (min-width: 640px) {
+    .whatsapp-text {
+        display: inline;
+        margin-left: 0.5rem;
+    }
+}
