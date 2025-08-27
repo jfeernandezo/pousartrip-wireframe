@@ -70,24 +70,27 @@ Documentação Estática: O código extraído foi separado em arquivos estático
 📂 Estrutura do Repositório
 O repositório está organizado em duas partes principais: o código-fonte original do projeto Next.js e a versão estática pronta para visualização.
 
+```
 pousartrip-wireframe/
 │
-├── /app/                     # Código-fonte das páginas (Next.js App Router)
-├── /components/              # Componentes React reutilizáveis
-├── /hooks/                   # Hooks customizados do React
-├── /lib/                     # Funções utilitárias e lógicas
-├── /public/                  # Arquivos estáticos (imagens, fontes)
+├── /app/               # Código-fonte das páginas (Next.js App Router)
+├── /components/        # Componentes React reutilizáveis
+├── /hooks/             # Hooks customizados do React
+├── /lib/               # Funções utilitárias e lógicas
+├── /public/            # Arquivos estáticos (imagens, fontes)
 │
-├── /static-version/          # 👈 VERSÃO ESTÁTICA E DOCUMENTADA
+├── /static-version/    # 👈 VERSÃO ESTÁTICA E DOCUMENTADA
 │   ├── index.html
 │   └── /assets/
 │       ├── /css/
 │       ├── /js/
 │       └── /images/
 │
-├── next.config.mjs           # Arquivo de configuração do Next.js
-├── package.json              # Dependências e scripts do projeto
-└── ...                       # Outros arquivos de configuração
+├── next.config.mjs     # Arquivo de configuração do Next.js
+├── package.json        # Dependências e scripts do projeto
+└── ...                 # Outros arquivos de configuração
+```
+
 Código-fonte (Pastas principais): Contém toda a lógica, componentes e estilos utilizados durante o desenvolvimento com Next.js e React.
 
 Pasta static-version: Contém a versão final do site em HTML, CSS e JS puros, ideal para visualização rápida, documentação e portabilidade.
