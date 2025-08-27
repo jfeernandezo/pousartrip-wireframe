@@ -24,7 +24,7 @@ Este repositório contém o protótipo visual e os componentes de front-end para
 📄 Licença
 
 📝 Sobre o Projeto
-O PousarTrip Wireframe é um projeto de front-end que serve como um protótipo de alta fidelidade para uma plataforma de agência de viagens. O objetivo principal deste repositório é documentar e apresentar os componentes visuais da interface de forma clara, organizada e portátil.
+O PousarTrip Wireframe é um projeto de front-end que serve como um protótipo de alta fidelidade para uma plataforma de agência de milhas. O objetivo principal deste repositório é documentar e apresentar os componentes visuais da interface de forma clara, organizada e portátil.
 
 O projeto foi originalmente desenvolvido utilizando um stack moderno para garantir agilidade e qualidade, e o resultado final foi estruturado como código estático (HTML, CSS, JS) para facilitar a consulta, o compartilhamento e a integração com outras plataformas.
 
